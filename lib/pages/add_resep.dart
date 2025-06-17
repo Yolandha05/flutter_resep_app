@@ -37,7 +37,8 @@ class _AddResepPageState extends State<AddResepPage> {
       });
 
       if (!mounted) return;
-      Navigator.pop(context);
+Navigator.pop(context, true);
+
     } catch (e) {
       if (!mounted) return;
       ScaffoldMessenger.of(context).showSnackBar(

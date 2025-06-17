@@ -123,9 +123,14 @@ class _ListResepPageState extends State<ListResepPage> {
         shape: const CircleBorder(
           side: BorderSide(color: Colors.brown),
         ),
-        onPressed: () {
-          Navigator.pushNamed(context, "/add");
-        },
+        onPressed: () async {
+  final result = await Navigator.pushNamed(context, "/add");
+
+  if (result == true) { // Kalau memang saat back dia return true
+    fetchResep();
+  }
+},
+
         child: const Icon(Icons.add, color: Colors.brown),
       ),
     );
